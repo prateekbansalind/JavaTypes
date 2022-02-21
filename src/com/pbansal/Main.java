@@ -42,9 +42,10 @@ public class Main{
         // mortgageCalc();
         // logicalOperator();
         // ifStatement();
-        ifStatementSimplified();
-
-
+        // ifStatementSimplified();
+        // ternaryOperator();
+        // switchStatement();
+        fizzBuzz();
     }
 
 
