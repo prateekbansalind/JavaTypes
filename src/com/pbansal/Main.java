@@ -17,9 +17,11 @@ import static com.pbansal.ArrayDemo.arrayDemo;
 import static com.pbansal.ArrayDemo.multiArrayDemo;
 import static com.pbansal.CastingDemo.castingDemo;
 import static com.pbansal.ConstantDemo.constantDemo;
+import static com.pbansal.ControlFlow.*;
 import static com.pbansal.FormatNumbers.formatNumbers;
 import static com.pbansal.IntDemo.intDemo;
 import static com.pbansal.MathClassDemo.mathDemo;
+import static com.pbansal.MortgageCalculator.mortgageCalc;
 import static com.pbansal.ReadInput.readInput;
 import static com.pbansal.StringDemo.stringDemo;
 
@@ -36,8 +38,14 @@ public class Main{
         // castingDemo();
         // athDemo();
         // formatNumbers();
-        readInput();
+        // readInput();
+        // mortgageCalc();
+        // logicalOperator();
+        // ifStatement();
+        ifStatementSimplified();
 
 
     }
+
+
 }
