@@ -45,7 +45,14 @@ public class Main{
         // ifStatementSimplified();
         // ternaryOperator();
         // switchStatement();
-        fizzBuzz();
+        // fizzBuzz();
+        // forLoop();
+        // whileLoop();
+        // doWhileLoop();
+        // breakContinue();
+        // forEachLoop();
+        mortgageCalc();
+
     }
 
 

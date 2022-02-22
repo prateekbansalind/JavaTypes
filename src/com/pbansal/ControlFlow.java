@@ -1,5 +1,6 @@
 package com.pbansal;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 import static java.lang.String.*;
@@ -122,6 +123,76 @@ public class ControlFlow {
         else
             word = String.valueOf(number);
         System.out.println(word);
+    }
+
+    public static void forLoop(){
+        // normal traditional way
+        for (int i = 1; i <= 5; i++)
+            System.out.println("Hello World " + i);
+
+        // another way
+        for (int i = 5; i > 0; i--)
+            System.out.println("Hello World " + i);
+
+    }
+
+    public static void whileLoop(){
+        int i = 0;
+        while (i < 5){
+            System.out.println("Hello World!");
+            i++;
+            }
+
+        // While loops are helpful when we don't know how many times are we looping something
+
+        String input = "";
+        Scanner scanner = new Scanner(System.in);
+        // while (input != "quit") /* here in the while loop, input != "quit"
+        // can not be used as the string is reference type. When we compare two string types
+        // with comparison operators they basically compare the address of the object not the actual value*/
+        while(!input.equals("quit")){
+            System.out.print("Input: ");
+            input = scanner.next().toLowerCase();
+            System.out.println(input);
+        }
+    }
+
+    public static void doWhileLoop(){
+        Scanner scanner = new Scanner(System.in);
+        String firstName = "";
+        do {
+            System.out.print("Enter your first name: ");
+            firstName = scanner.next().toLowerCase();
+            System.out.println(firstName);
+        } while(!firstName.equals("exit"));
+    }
+
+    public static void breakContinue(){
+        Scanner scanner = new Scanner(System.in);
+        String firstName = "";
+        while (true) {                     // !firstName.equals("quit")  == true
+            System.out.print("Enter your first name: ");
+            firstName = scanner.next().toLowerCase();
+//            if (!firstName.equals("quit"))
+//            System.out.println(firstName);
+            if (firstName.equals("quit"))
+                break;
+            if (firstName.equals("pass"))
+                continue;
+                System.out.println(firstName);
+        };
+    }
+
+    public static void forEachLoop(){
+        // for each loop
+        String[] fruits = {"Apple", "Orange", "Mango"};
+        for (int i = 0; i < fruits.length; i++){
+            System.out.println(fruits[i]);
+        }
+
+       for (String fruit : fruits){
+            System.out.println(fruit);
+        }
     }
 
 }
