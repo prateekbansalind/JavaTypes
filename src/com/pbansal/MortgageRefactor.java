@@ -3,12 +3,11 @@ package com.pbansal;
 import java.util.Scanner;
 
 public class MortgageRefactor {
+    final static byte MONTH_IN_YEAR = 12;
+    final static byte PERCENT = 100;
 
     // This method calculates final mortgage.
     public static double calculateMortgage(int principal, float yearlyInterest, byte year){
-
-        final byte MONTH_IN_YEAR = 12;
-        final byte PERCENT = 100;
         short numberOfPayments = (short) (year * MONTH_IN_YEAR);
         float monthlyInterest = yearlyInterest / MONTH_IN_YEAR / PERCENT;
         double mortgage = principal
@@ -29,6 +28,16 @@ public class MortgageRefactor {
             System.out.println("Enter a value between " + min + " and " + max + ".");
         }
         return userInput;
+    }
+
+    // Method to calculate remaining principle after 1st monthly installment
+    public static double calculateBalance(int principal, byte year, float yearlyInterest, byte noOfPaymentMade ){
+        short numberOfPayments = (short) (year * MONTH_IN_YEAR);
+        float monthlyInterest = yearlyInterest / MONTH_IN_YEAR / PERCENT;
+        double remainingBalance = (principal
+                * (Math.pow((1+monthlyInterest), numberOfPayments) - Math.pow((1+monthlyInterest), noOfPaymentMade))
+                / (Math.pow((1+monthlyInterest), numberOfPayments) - 1));
+        return remainingBalance;
     }
 
 }
