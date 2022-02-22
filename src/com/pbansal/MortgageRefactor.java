@@ -40,11 +40,11 @@ public class MortgageRefactor {
                 / (Math.pow((1+monthlyInterest), numberOfPayments) - 1));
         return remainingBalance;
     }
-    public static void printPaymentSchedule(int principal, float yearlyInterest, byte year, byte noOfMonth) {
+    public static void printPaymentSchedule(int principal, float yearlyInterest, byte year) {
         System.out.println("PAYMENT SCHEDULE");
         System.out.println("------");
 
-        for (int month = 1; month <= noOfMonth; month++){
+        for (int month = 1; month <= year * MONTH_IN_YEAR; month++){
 
             String leftPrincipal = NumberFormat.getCurrencyInstance().format(calculateBalance(principal, year, yearlyInterest, (byte) month));
             System.out.println("Month " + month + " : " + leftPrincipal);

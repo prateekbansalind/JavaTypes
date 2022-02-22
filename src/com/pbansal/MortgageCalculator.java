@@ -14,13 +14,12 @@ public class MortgageCalculator {
             int principal = (int) readNumber("Enter a principal amount: ", 1000, 1000000);
             float yearlyInterest = (float) readNumber("Enter a annual interest rate: ", 1, 30);
             byte year = (byte) readNumber("Enter period of year: ", 1, 30);
-            byte noOfMonth = (byte) (year * 12);
 
             // Calculate mortgage
             printMortgage(principal, yearlyInterest, year);
 
             // Calculate payment schedule
-            printPaymentSchedule(principal, yearlyInterest, year, noOfMonth);
+            printPaymentSchedule(principal, yearlyInterest, year);
 
         }
 }

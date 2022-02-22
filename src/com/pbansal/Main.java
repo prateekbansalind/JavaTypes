@@ -18,6 +18,7 @@ import static com.pbansal.ArrayDemo.multiArrayDemo;
 import static com.pbansal.CastingDemo.castingDemo;
 import static com.pbansal.ConstantDemo.constantDemo;
 import static com.pbansal.ControlFlow.*;
+import static com.pbansal.DebugExample.debug;
 import static com.pbansal.FormatNumbers.formatNumbers;
 import static com.pbansal.IntDemo.intDemo;
 import static com.pbansal.MathClassDemo.mathDemo;
@@ -51,8 +52,8 @@ public class Main{
         // doWhileLoop();
         // breakContinue();
         // forEachLoop();
-        mortgageCalc();
-
+        // mortgageCalc();
+        debug();
     }
 
 
