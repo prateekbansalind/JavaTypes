@@ -17,18 +17,11 @@ public class MortgageCalculator {
             byte noOfMonth = (byte) (year * 12);
 
             // Calculate mortgage
-            double mortgage = calculateMortgage(principal, yearlyInterest, year);
-            String formattedMortgage = NumberFormat.getCurrencyInstance().format(mortgage);
-            System.out.println("\nMORTGAGE :" + formattedMortgage);
-            System.out.println("------");
-            System.out.println("PAYMENT SCHEDULE");
+            printMortgage(principal, yearlyInterest, year);
 
-            for (int month = 1; month <= noOfMonth; month++){
+            // Calculate payment schedule
+            printPaymentSchedule(principal, yearlyInterest, year, noOfMonth);
 
-                String leftPrincipal = NumberFormat.getCurrencyInstance().format(calculateBalance(principal, year, yearlyInterest, (byte) month));
-                System.out.println("Month " + month + " : " + leftPrincipal);
-            }
-
-            }
+        }
 }
 

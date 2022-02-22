@@ -1,5 +1,6 @@
 package com.pbansal;
 
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class MortgageRefactor {
@@ -38,6 +39,23 @@ public class MortgageRefactor {
                 * (Math.pow((1+monthlyInterest), numberOfPayments) - Math.pow((1+monthlyInterest), noOfPaymentMade))
                 / (Math.pow((1+monthlyInterest), numberOfPayments) - 1));
         return remainingBalance;
+    }
+    public static void printPaymentSchedule(int principal, float yearlyInterest, byte year, byte noOfMonth) {
+        System.out.println("PAYMENT SCHEDULE");
+        System.out.println("------");
+
+        for (int month = 1; month <= noOfMonth; month++){
+
+            String leftPrincipal = NumberFormat.getCurrencyInstance().format(calculateBalance(principal, year, yearlyInterest, (byte) month));
+            System.out.println("Month " + month + " : " + leftPrincipal);
+        }
+    }
+
+    public static void printMortgage(int principal, float yearlyInterest, byte year) {
+        double mortgage = calculateMortgage(principal, yearlyInterest, year);
+        String formattedMortgage = NumberFormat.getCurrencyInstance().format(mortgage);
+        System.out.println("\nMORTGAGE :" + formattedMortgage);
+        System.out.println("------");
     }
 
 }
